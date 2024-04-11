@@ -3,7 +3,13 @@ import React from "react";
 const Corpo = () =>{
     return(
         <div>
-            aqui vai o Corpo
+           <section>
+             <div className="corpo">
+                <div className="caixa"></div>
+             </div>
+           </section>
+
+
         </div>
     )
 }
