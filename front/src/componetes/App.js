@@ -1,6 +1,7 @@
 import React from "react";
 import Cabecario from "./Cabecario";
 import Corpo from "./Corpo";
+import './style.css'
 
 const App = () =>{
     return(

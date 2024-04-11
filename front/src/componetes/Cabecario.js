@@ -4,7 +4,10 @@ const Cabecario = () =>{
     
     return(
         <div>
-             <p>AQUI VAI O Cabecario</p>
+             <div className="cabeçario">
+               <h1>Gestor Financeiro</h1>
+             </div>
+
         </div> 
     )
 }
