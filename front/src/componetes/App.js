@@ -1,13 +1,13 @@
 import React from "react";
 import Cabecario from "./Cabecario";
-import Corpo from "./Corpo";
+import Chat from "./Chat";
 import './style.css'
 
 const App = () =>{
     return(
         <div> 
             <Cabecario/> 
-             <Corpo/>
+            <Chat/>
         </div>
 
     )
