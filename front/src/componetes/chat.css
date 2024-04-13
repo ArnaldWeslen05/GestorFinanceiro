@@ -1,0 +1,50 @@
+.corpo{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.caixa{
+    margin-top: 100px;
+    background-color: white;
+   width: 600px;
+   height: 450px;
+   box-shadow: 2px 2px 10px;
+   display: flex;
+   padding: 20px;
+}
+
+.pergunta{
+    display: flex;
+    margin-top: 0;
+    align-self: flex-end;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+.pergunta input{
+    margin: 10px;
+    width: 600px;
+    height: 60px;
+    background-color: #AD6DFF ;
+    border-radius: 10px;   
+    border: none;
+    font-size: 18px;
+}
+.pergunta input::placeholder{
+    margin: 15px;
+    font-size: 18px;
+    color: #C8C2C2 ;
+}
+.pergunta button{
+    display: flex;
+    align-items: center;
+    margin-left: -70px;
+    height: 45px;
+    background: transparent;
+    border: none;
+}
+.pergunta button svg{
+    cursor: pointer;
+     height: 40px;
+     width: 40px;
+}
