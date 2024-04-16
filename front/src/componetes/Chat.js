@@ -9,6 +9,7 @@ const Corpo = () =>{
              <div className="corpo">
                 <div className="caixa">
                 <div className="pergunta">
+                  
                     <input type="text" placeholder="Pergunte ao gestor..." required/>
                     <button><IoIosSend /></button>
                     
