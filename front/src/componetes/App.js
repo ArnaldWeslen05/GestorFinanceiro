@@ -6,8 +6,15 @@ import './style.css'
 const App = () =>{
     return(
         <div> 
-            <Cabecario/> 
-            <Chat/>
+
+            <header>
+                <Cabecario/>
+            </header>
+            
+            <div>
+                <Chat/>
+            </div>
+           
         </div>
 
     )
