@@ -1,7 +1,8 @@
 import React from "react";
 import Cabecario from "./Cabecario";
 import Chat from "./Chat";
-import './style.css'
+import Investimentos from "./Investimentos";
+import './style.css';
 
 const App = () =>{
     return(
@@ -12,6 +13,7 @@ const App = () =>{
             </header>
             
             <div>
+            <Investimentos/>
                 <Chat/>
             </div>
            

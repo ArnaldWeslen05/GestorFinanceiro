@@ -1,0 +1,15 @@
+.container-investimentos{
+    display: none;
+    justify-content: center;
+    position:absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 30px;
+}
+.caixa-investimentos{
+    background-color: white;
+    width: 800px;
+    height: 600px;
+    z-index: 10;
+    
+}
