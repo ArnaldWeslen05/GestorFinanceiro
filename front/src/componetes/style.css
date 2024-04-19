@@ -32,7 +32,7 @@ body{
 }
 .menu {
     position: absolute;
-    display: block; 
+    display: none; 
     right: 0; 
     background-color: black;
     color: #9747FF;
