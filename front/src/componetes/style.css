@@ -38,14 +38,6 @@ body{
     color: #9747FF;
     width: 300px;
     height: 740px;
-    animation: abrir 3s;
-}
-@keyframes abrir{
-    0%{
-      margin-right: -50px;
-    }100%{
-        margin-left: 500px;
-    }
 }
 .menu p{
     font-size: 30px;
