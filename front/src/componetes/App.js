@@ -1,7 +1,6 @@
 import React from "react";
 import Cabecario from "./Cabecario";
 import Chat from "./Chat";
-import Investimentos from "./Investimentos";
 import './style.css';
 
 const App = () =>{
@@ -13,7 +12,6 @@ const App = () =>{
             </header>
             
             <div>
-            <Investimentos/>
                 <Chat/>
             </div>
            

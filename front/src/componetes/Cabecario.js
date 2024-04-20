@@ -1,7 +1,11 @@
-import React from "react"
+import React, { useState } from "react";
+import Investimentos from "./Investimentos";
 
 const Cabecario = () =>{
-  
+  const [mostrarInvestimentos, setMostrarInvestimentos] = useState(false); 
+
+  //abrir o Menu
+
   function abrirMenu(){
     const menu = document.getElementById('menu')
     if(menu.style.display === 'none'){
@@ -10,7 +14,11 @@ const Cabecario = () =>{
       menu.style.display = 'none'
     }
   }
-    
+  //Abbre O Componete Investimentos
+  function AbrirInvestimentos(){
+    setMostrarInvestimentos(!mostrarInvestimentos)
+  }
+
     return(
         <div>
              <div className="cabeçario">
@@ -21,12 +29,15 @@ const Cabecario = () =>{
                       <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
                     </svg>
               </div>
+              
               <div id="menu" className="menu">
-                 <p>Investimentos</p>
+                 <p onClick={AbrirInvestimentos}>Investimentos</p>
                  <p>Educação Financeira</p>
                  <p>Notícias</p>
               </div>
-            
+              
+              {/* Controla O componente Investimentos , e compara se deve ser mostardo ou não */}
+              {mostrarInvestimentos && <Investimentos onClose={AbrirInvestimentos}/>}
         </div> 
     )
 }
