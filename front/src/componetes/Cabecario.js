@@ -36,6 +36,7 @@ const Cabecario = () =>{
               <div id="menu" className="menu">
                  <p onClick={AbrirInvestimentos}>Investimentos</p>
                  <p>Educação Financeira</p>
+                 <p>Defina Sua Meta</p>
                  <p>Notícias</p>
               </div>
 

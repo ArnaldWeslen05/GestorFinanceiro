@@ -96,6 +96,7 @@
     .caixa{
         width: 280px;
         height: 500px;
+        margin: 5px;
     }
     .pergunta input{
         width: 280px;
