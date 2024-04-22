@@ -1,0 +1,30 @@
+.caixa-footer{
+    display: grid;
+    grid-template-columns: repeat(3, 250px);
+    grid-gap: 30px ;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    padding: 40px ;
+    cursor: pointer;
+}
+.box-footer{
+    text-align: center;
+    background-color: #28302e;
+    border-radius: 10px;
+    width: 200px;
+    height: 100px;
+    box-shadow: 1px 2px 10px black;
+}
+.box-footer p{
+    padding: 10px;
+    font-size: 20px;
+    font-style: bold italic;
+    color: #9747FF;
+    cursor: pointer;
+}
+@media screen and (max-width: 850px){
+    .caixa-footer{
+        display: none;
+    }
+}
