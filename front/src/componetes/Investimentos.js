@@ -10,6 +10,7 @@ const Investimentos = ({onClose}) =>{
         <button className="close" onClick={onClose}><IoCloseCircle /></button>
            <div className="caixa-investimentos">
             <div className="box-investimentos">
+               
                 
                 <p>Rendimentos CDI </p> 
                 <p><FaChartLine /></p> 
