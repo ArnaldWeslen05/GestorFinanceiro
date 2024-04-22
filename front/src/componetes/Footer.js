@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FaChartLine, FaNewspaper } from "react-icons/fa6";
 import { MdCastForEducation } from "react-icons/md";
+import { GoGoal } from "react-icons/go";
 import Investimentos from "./Investimentos";
 import './footer.css';
 
@@ -29,9 +30,16 @@ const Footer = () => {
 
         {/* Box para Notícias */}
         <div className="box-footer">
+          <p>Defina Sua Meta</p>
+          <p><GoGoal/></p>
+          
+        </div>
+        {/* Box Para defeinir sua Meta */}
+        <div className="box-footer">
           <p>Notícias</p>
           <p><FaNewspaper/></p>
         </div>
+
       </div>
 
       {/* Renderiza o componente Investimentos se mostrarInvestimentos for true */}
