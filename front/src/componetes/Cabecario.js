@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Footer from "./Footer";
-import Investimentos from "./Investimentos";
+import Cdi from "./Cdi";
 
 const Cabecario = () =>{
   const [mostrarInvestimentos, setMostrarInvestimentos] = useState(false); 
@@ -41,7 +41,7 @@ const Cabecario = () =>{
               </div>
 
               {/* Controla O componente Investimentos , e compara se deve ser mostardo ou não */}
-              {mostrarInvestimentos && <Investimentos onClose={AbrirInvestimentos}/>}
+              {mostrarInvestimentos &&< Cdi onClose={AbrirInvestimentos}/>}
               
               <footer>
                 <Footer/>

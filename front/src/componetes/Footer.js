@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { FaChartLine, FaNewspaper } from "react-icons/fa6";
-import { MdCastForEducation } from "react-icons/md";
+import { FaBitcoin } from "react-icons/fa";
 import { GoGoal } from "react-icons/go";
-import Investimentos from "./Investimentos";
+import Cdi from "./Cdi";
 import './footer.css';
 
 const Footer = () => {
@@ -18,14 +18,14 @@ const Footer = () => {
       <div className="caixa-footer">
         {/* Box para Investimentos */}
         <div className="box-footer" onClick={abrirInvestimentos} id='Inv'>
-          <p>Investimentos</p>
+          <p>Rendimento CDI</p>
           <p> <FaChartLine/> </p>
         </div>
 
         {/* Box para Educação Financeira */}
         <div className="box-footer">
-          <p>Educação Financeira</p>
-          <p><MdCastForEducation /></p>
+          <p>Criptomoeda</p>
+          <p><FaBitcoin/></p>
         </div>
 
         {/* Box para Notícias */}
@@ -43,7 +43,7 @@ const Footer = () => {
       </div>
 
       {/* Renderiza o componente Investimentos se mostrarInvestimentos for true */}
-      {mostrarInvestimentos && <Investimentos onClose={abrirInvestimentos} />}
+      {mostrarInvestimentos && <Cdi onClose={abrirInvestimentos} />}
     </div>
   );
 }
