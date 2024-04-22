@@ -13,11 +13,13 @@ const Cabecario = () =>{
         menu.style.display = 'block'
     }else{
       menu.style.display = 'none'
+    
     }
   }
   //Abbre O Componete Investimentos
   function AbrirInvestimentos(){
     setMostrarInvestimentos(!mostrarInvestimentos)
+  
   }
 
     return(

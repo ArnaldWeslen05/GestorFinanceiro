@@ -16,7 +16,7 @@ const Footer = () => {
     <div>
       <div className="caixa-footer">
         {/* Box para Investimentos */}
-        <div className="box-footer" onClick={abrirInvestimentos}>
+        <div className="box-footer" onClick={abrirInvestimentos} id='Inv'>
           <p>Investimentos</p>
           <p> <FaChartLine/> </p>
         </div>
