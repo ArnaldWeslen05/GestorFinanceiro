@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Footer from "./Footer";
 import Investimentos from "./Investimentos";
 
 const Cabecario = () =>{
@@ -35,9 +36,13 @@ const Cabecario = () =>{
                  <p>Educação Financeira</p>
                  <p>Notícias</p>
               </div>
-              
+
               {/* Controla O componente Investimentos , e compara se deve ser mostardo ou não */}
               {mostrarInvestimentos && <Investimentos onClose={AbrirInvestimentos}/>}
+              
+              <footer>
+                <Footer/>
+           </footer>
         </div> 
     )
 }

@@ -4,7 +4,6 @@
     align-content: center;
 }
 .caixa{
-   margin-top: 60px;
    background-color: #E8F5F2;
    width: 900px;
    height: 450px;
@@ -61,6 +60,7 @@
     .caixa{
         width: 600px;
         height: 600px;
+        margin-top: 60px;
     }
     .pergunta input{
         width: 600px;

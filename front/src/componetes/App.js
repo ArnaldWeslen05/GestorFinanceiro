@@ -1,7 +1,6 @@
 import React from "react";
 import Cabecario from "./Cabecario";
 import Chat from "./Chat";
-import Footer from "./Footer";
 import './style.css';
 
 const App = () =>{
@@ -16,9 +15,7 @@ const App = () =>{
                 <Chat/>
             </div>
            
-           <footer>
-                <Footer/>
-           </footer>
+          
         </div>
 
     )
