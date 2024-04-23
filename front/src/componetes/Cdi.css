@@ -74,14 +74,27 @@
    margin-left: 20px;
    margin-right: 20px;
 }
+.calcular{
+    background-color: rgb(16,15,15);
+    color: blueviolet;
+    border: none;
+    cursor: pointer;
+    height: 30px;
+    width: 60px;
+    box-shadow: -2px 1px 4px 1px;
+    border-radius: 5px;
+}
 .close{
     position: fixed;
     background-color: transparent;
     font-size: 30px;
-    color: red;
+    color: rgb(95, 81, 81);
     border: none;
     margin: 15px ;
     cursor: pointer;
+}
+.close:hover{
+    color: red;
 }
 @media screen and (max-width: 820px){
     .caixa-investimentos{

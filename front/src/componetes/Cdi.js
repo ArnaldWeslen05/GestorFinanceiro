@@ -32,6 +32,7 @@ const Cdi = ({onClose}) =>{
                      <input type="number" name="" id="" />
                     <h1 className="tt">Meses: </h1>
                     <input type="number" name="" id="" />
+                    <button className="calcular"> calcular </button>
                 </div>
                 <h1 className="res">Resultado </h1>
            </div>
