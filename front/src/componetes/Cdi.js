@@ -12,7 +12,7 @@ const Cdi = ({onClose}) =>{
                     <input type="checkbox" name="BancoCdi" id=""/>
                     <p>Nubank</p>
                 </div>
-
+                  
                 <div className="caixa-cdi">
                    <input type="checkbox" name="BancoCdi" id="" />
                    <p>PicPay</p>

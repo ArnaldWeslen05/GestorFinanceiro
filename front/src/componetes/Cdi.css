@@ -20,7 +20,6 @@
 .caixa-cdi input{
    border-radius: 50%;
   margin: 20px;
- 
 }
 .caixa-cdi{
     display: flex;
@@ -101,12 +100,7 @@
         display:block;
         width: 500px;
         height: 900px;
-        padding: 10px;
-        
-    }
-    .box-investimentos{
-        margin: 80px;
-        height: 70px;
+        padding: 10px;   
     }
     .resultado-cdi input{
         width: 150px;

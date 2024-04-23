@@ -5,7 +5,7 @@ import { GoGoal } from "react-icons/go";
 import Cdi from "./Cdi";
 import './footer.css';
 
-const Footer = () => {
+const Funcoes = () => {
   const [mostrarInvestimentos, setMostrarInvestimentos] = useState(false);
 
   // Função para abrir o componente Investimentos
@@ -48,4 +48,4 @@ const Footer = () => {
   );
 }
 
-export default Footer;
+export default Funcoes;

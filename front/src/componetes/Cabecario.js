@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Footer from "./Footer";
+import Funcoes from "./Funcoes";
 import Cdi from "./Cdi";
 
 const Cabecario = () =>{
@@ -44,7 +44,7 @@ const Cabecario = () =>{
               {mostrarInvestimentos &&< Cdi onClose={AbrirInvestimentos}/>}
               
               <footer>
-                <Footer/>
+                <Funcoes/>
            </footer>
         </div> 
     )

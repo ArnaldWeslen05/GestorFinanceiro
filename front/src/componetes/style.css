@@ -10,7 +10,6 @@ body{
     backdrop-filter: saturate(100%) blur(20%);
     width: 100%;
     height: 60px;
-
 }   
 .cabeçario h1 {
     padding: 10px;
