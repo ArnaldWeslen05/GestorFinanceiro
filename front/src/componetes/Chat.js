@@ -12,7 +12,7 @@ const Corpo = () =>{
                     <div className="caixa">
                         <div className="pergunta">
                             <input 
-                                type="text" 
+                               type="text" 
                                 id="pergunta" 
                                 placeholder="Pergunte ao gestor..."
                                  required  />

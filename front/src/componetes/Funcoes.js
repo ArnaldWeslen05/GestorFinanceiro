@@ -3,7 +3,7 @@ import { FaChartLine, FaNewspaper } from "react-icons/fa6";
 import { FaBitcoin } from "react-icons/fa";
 import { GoGoal } from "react-icons/go";
 import Cdi from "./Cdi";
-import './footer.css';
+import './funcoes.css';
 
 const Funcoes = () => {
   const [mostrarInvestimentos, setMostrarInvestimentos] = useState(false);

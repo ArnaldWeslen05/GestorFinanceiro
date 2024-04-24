@@ -44,6 +44,7 @@
 .resultado-cdi{
     display: flex;
 }
+
 .tt{
     color: blueviolet;
     font-size: 20px;
@@ -82,6 +83,10 @@
     width: 60px;
     box-shadow: -2px 1px 4px 1px;
     border-radius: 5px;
+}
+.calcular:hover{
+    transition: all 1s;
+    background-color: white;
 }
 .close{
     position: fixed;
