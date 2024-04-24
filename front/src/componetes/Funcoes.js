@@ -4,27 +4,37 @@ import { FaBitcoin } from "react-icons/fa";
 import { GoGoal } from "react-icons/go";
 import Cdi from "./Cdi";
 import './funcoes.css';
+import Criptomoeda from './CriptoMoeda';
+
 
 const Funcoes = () => {
   const [mostrarCDI, setMostrarCDI] = useState(false);
+  const[mostrarCripto, setCripto] = useState(false);
 
-  // Função para abrir o componente Investimentos
+  // Função para abrir o componente CDI
   function abrirCDI() {
     setMostrarCDI(!mostrarCDI);
+    setCripto(false)
   }
+   // Função para abrir o componente CriptoMoeda
+   function abrirCripto(){
+    setCripto(!mostrarCripto)
+    setMostrarCDI(false)
+   }
+ 
 
   return (
     <div>
       <div className="caixa-footer">
-        {/* Box para Investimentos */}
+        {/* Box para CDI*/}
         <div className="box-footer" onClick={abrirCDI} id='Inv'>
           <p>Rendimento CDI</p>
           <p> <FaChartLine/> </p>
         </div>
 
-        {/* Box para Educação Financeira */}
-        <div className="box-footer">
-          <p>Criptomoeda</p>
+        {/* Box para CriptoMoeda */}
+        <div className="box-footer" onClick={abrirCripto}>
+          <p>Cripto Moeda</p>
           <p><FaBitcoin/></p>
         </div>
 
@@ -39,11 +49,10 @@ const Funcoes = () => {
           <p>Notícias</p>
           <p><FaNewspaper/></p>
         </div>
-
       </div>
-
       {/* Renderiza o componente Investimentos se mostrarInvestimentos for true */}
       {mostrarCDI && <Cdi onClose={abrirCDI} />}
+      {mostrarCripto && <Criptomoeda onCloseMoeda={abrirCripto} />}
     </div>
   );
 }

@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import Funcoes from "./Funcoes";
 import Cdi from "./Cdi";
+import Criptomoeda from "./CriptoMoeda";
+
 
 const Cabecario = () =>{
-  const [mostrarInvestimentos, setMostrarInvestimentos] = useState(false); 
-
+  const [mostrarCDI, setMostrarCDI] = useState(false); 
+const [mostrarCripto, setCripto ]= useState(false)
   //abrir o Menu
 
   function abrirMenu(){
@@ -18,8 +19,12 @@ const Cabecario = () =>{
   }
   //Abbre O Componete Investimentos
   function AbrirInvestimentos(){
-    setMostrarInvestimentos(!mostrarInvestimentos)
-  
+    setMostrarCDI(!mostrarCDI)
+    setCripto(false)
+  }
+  function abrirCripto (){
+    setCripto(!mostrarCripto)
+    setMostrarCDI(false)
   }
 
     return(
@@ -35,13 +40,14 @@ const Cabecario = () =>{
               
               <div id="menu" className="menu">
                  <p onClick={AbrirInvestimentos}>Rendimento CDI</p>
-                 <p>Criptomoeda</p>
+                 <p onClick={abrirCripto}>Criptomoeda</p>
                  <p>Defina Sua Meta</p>
-                 <p>Notícias</p>
+               
               </div>
-
+                
               {/* Controla O componente Investimentos , e compara se deve ser mostardo ou não */}
-              {mostrarInvestimentos &&< Cdi onClose={AbrirInvestimentos}/>}
+              {mostrarCDI &&< Cdi onClose={AbrirInvestimentos}/>}
+              {mostrarCripto && <Criptomoeda onCloseMoeda={abrirCripto}/>}
              
         </div> 
     )
