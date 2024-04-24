@@ -16,7 +16,7 @@ const Corpo = () =>{
                                 id="pergunta" 
                                 placeholder="Pergunte ao gestor..."
                                  required  />
-                            <button><IoIosSend /></button>
+                            <button ><IoIosSend /></button>
                         </div>
                     </div>
                 </div>

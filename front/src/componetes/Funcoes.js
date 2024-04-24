@@ -6,18 +6,18 @@ import Cdi from "./Cdi";
 import './funcoes.css';
 
 const Funcoes = () => {
-  const [mostrarInvestimentos, setMostrarInvestimentos] = useState(false);
+  const [mostrarCDI, setMostrarCDI] = useState(false);
 
   // Função para abrir o componente Investimentos
-  function abrirInvestimentos() {
-    setMostrarInvestimentos(!mostrarInvestimentos);
+  function abrirCDI() {
+    setMostrarCDI(!mostrarCDI);
   }
 
   return (
     <div>
       <div className="caixa-footer">
         {/* Box para Investimentos */}
-        <div className="box-footer" onClick={abrirInvestimentos} id='Inv'>
+        <div className="box-footer" onClick={abrirCDI} id='Inv'>
           <p>Rendimento CDI</p>
           <p> <FaChartLine/> </p>
         </div>
@@ -43,7 +43,7 @@ const Funcoes = () => {
       </div>
 
       {/* Renderiza o componente Investimentos se mostrarInvestimentos for true */}
-      {mostrarInvestimentos && <Cdi onClose={abrirInvestimentos} />}
+      {mostrarCDI && <Cdi onClose={abrirCDI} />}
     </div>
   );
 }

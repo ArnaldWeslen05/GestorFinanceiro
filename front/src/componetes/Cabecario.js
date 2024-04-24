@@ -34,18 +34,15 @@ const Cabecario = () =>{
               </div>
               
               <div id="menu" className="menu">
-                 <p onClick={AbrirInvestimentos}>Investimentos</p>
-                 <p>Educação Financeira</p>
+                 <p onClick={AbrirInvestimentos}>Rendimento CDI</p>
+                 <p>Criptomoeda</p>
                  <p>Defina Sua Meta</p>
                  <p>Notícias</p>
               </div>
 
               {/* Controla O componente Investimentos , e compara se deve ser mostardo ou não */}
               {mostrarInvestimentos &&< Cdi onClose={AbrirInvestimentos}/>}
-              
-              <footer>
-                <Funcoes/>
-           </footer>
+             
         </div> 
     )
 }

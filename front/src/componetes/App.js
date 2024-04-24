@@ -1,6 +1,7 @@
 import React from "react";
 import Cabecario from "./Cabecario";
 import Chat from "./Chat";
+import Funcoes from "./Funcoes";
 import './style.css';
 
 const App = () =>{
@@ -10,7 +11,9 @@ const App = () =>{
             <header>
                 <Cabecario/>
             </header>
-            
+            <section>
+              <Funcoes/>
+            </section>
             <div>
                 <Chat/>
             </div>
