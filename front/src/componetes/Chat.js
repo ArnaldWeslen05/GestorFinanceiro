@@ -10,6 +10,7 @@ const Corpo = () =>{
             <section>
                 <div className="corpo">
                     <div className="caixa">
+                
                         <div className="pergunta">
                             <input 
                                type="text" 

@@ -2,42 +2,43 @@ import { IoCloseCircle } from "react-icons/io5";
 import './criptomoeda.css';
 
 const Criptomoeda = ({ onCloseMoeda }) => {
-
     function calcular() {
         const res = document.getElementById('res');
         const valor = document.getElementById('valor').value;
-        
-        if (valor.length === 0) {
-            alert('Insira um valor');
+        const moedas = document.getElementsByName('Moeda');
+        let moedaSelecionada = false;
+    
+       
+        for (let i = 0; i < moedas.length; i++) {
+            if (moedas[i].checked) {
+                moedaSelecionada = true;
+                break;
+            }
+        }
+
+        if (valor.length === 0 || !moedaSelecionada) {
+            res.innerText = 'Por favor, insira um valor e selecione uma moeda.';
         } else {
-            const moeda = document.getElementsByName('Moeda');
             let btc;
             let eth;
             let ltc;
             let xrp;
-
-            if (moeda[0].checked) {
+    
+            if (moedas[0].checked) {
                 btc = Number(valor) / 20;
-                res.innerText = `Resultado: ${btc} BTC`;
-            } else if(moeda[1].checked) {
-               eth = Number(valor) / 10;
-               res.innerText = `Resultado: ${eth} ETH`
-            } else if (moeda[2].checked){
+                res.innerText = `Resultado: ${btc.toFixed(5)} BTC`;
+            } else if (moedas[1].checked) {
+                eth = Number(valor) / 10;
+                res.innerText = `Resultado: ${eth.toFixed(5)} ETH`;
+            } else if (moedas[2].checked) {
                 ltc = Number(valor) / 40;
-                res.innerText = `Resultado: ${ltc} LTC`
-               
-            } else if (moeda[3].checked){
+                res.innerText = `Resultado: ${ltc.toFixed(5)} LTC`;
+            } else if (moedas[3].checked) {
                 xrp = Number(valor) / 50;
-                res.innerText = `Resultado: ${xrp} XRP`
-            }else{
-                res.innerText = ''
+                res.innerText = `Resultado: ${xrp.toFixed(5)} XRP`;
             }
-          
-           
-        
         }
     }
-
     return (
         <div>
             <div className="container-moeda">
@@ -64,8 +65,8 @@ const Criptomoeda = ({ onCloseMoeda }) => {
                     </div>
 
                     <div className="resultado-moeda">
-                        <h1 className="tt"> Valor: </h1>
-                        <input type="number" name="" id="valor" />
+                        <h1 className="tt">Qual Valor Deseja: </h1>
+                        <input type="number" name="" id="valor"  />
                         <button className="calcular" onClick={calcular}> Calcular </button>
                     </div>
                     <h1 className="res" id="res">Resultado </h1>

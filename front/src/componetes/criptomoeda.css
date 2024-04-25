@@ -21,6 +21,9 @@
    border-radius: 50%;
   margin: 20px;
 }
+.caixa-moeda label{
+    margin-top: 20px;
+}
 .caixa-moeda{
     display: flex;
     height: 60px;
@@ -36,11 +39,7 @@
     transition: all 1s;
     background-color: white;
 }
-.caixa-moeda p{
-    display: flex;
-    margin: 20px;
-    font-style: bold italic;
-}
+
 .resultado-moeda{
     display: flex;
 }
