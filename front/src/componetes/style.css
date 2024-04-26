@@ -38,6 +38,15 @@ body{
     width: 300px;
     height: 740px;
 }
+.close-menu{
+    background-color: transparent;
+    color: rgb(95, 81, 81);
+    font-size: 30px;
+    border: none;
+}
+.close-menu:hover{
+    color: red;
+}
 .menu p{
     font-size: 30px;
     font-style: bold italic;

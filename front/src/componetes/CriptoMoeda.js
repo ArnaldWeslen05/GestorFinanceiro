@@ -25,24 +25,24 @@ const Criptomoeda = ({ onCloseMoeda }) => {
             let xrp;
     
             if (moedas[0].checked) {
-                btc = Number(valor) / 20;
-                res.innerText = `Resultado: ${btc.toFixed(5)} BTC`;
+                btc = Number(valor) /  329686.49;
+                res.innerText = `com R$${valor} você terá: ${btc.toFixed(5)} BTC`;
             } else if (moedas[1].checked) {
-                eth = Number(valor) / 10;
-                res.innerText = `Resultado: ${eth.toFixed(5)} ETH`;
+                eth = Number(valor) / 16311.04;
+                res.innerText = `com R$${valor} você terá: ${eth.toFixed(5)} ETH`;
             } else if (moedas[2].checked) {
                 ltc = Number(valor) / 40;
-                res.innerText = `Resultado: ${ltc.toFixed(5)} LTC`;
+                res.innerText = `com R$${valor} você terá: ${ltc.toFixed(5)} LTC`;
             } else if (moedas[3].checked) {
                 xrp = Number(valor) / 50;
-                res.innerText = `Resultado: ${xrp.toFixed(5)} XRP`;
+                res.innerText = `com R$${valor} você terá: ${xrp.toFixed(5)} XRP`;
             }
         }
     }
     return (
         <div>
             <div className="container-moeda">
-                <button className="close" onClick={onCloseMoeda}><IoCloseCircle /></button>
+                <button className="close" onClick={onCloseMoeda}><IoCloseCircle /> </button>
                 <div className="box-moeda">
                     <div className="caixa-moeda">
                         <input type="radio" name="Moeda" id="btc"/>
