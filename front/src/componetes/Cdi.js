@@ -9,21 +9,21 @@ const Cdi = ({onClose}) =>{
         <button className="close" onClick={onClose}><IoCloseCircle /></button>
            <div className="caixa-investimentos">
                 <div className="caixa-cdi">
-                    <input type="checkbox" name="BancoCdi" id=""/>
+                    <input type="radio" name="BancoCdi" id=""/>
                     <p>Nubank</p>
                 </div>
                   
                 <div className="caixa-cdi">
-                   <input type="checkbox" name="BancoCdi" id="" />
+                   <input type="radio" name="BancoCdi" id="" />
                    <p>PicPay</p>
                 </div>
 
                 <div className="caixa-cdi">
-                    <input type="checkbox" name="BancoCdi" id="" />
+                    <input type="radio" name="BancoCdi" id="" />
                     <p>Inter</p>
                 </div>
                 <div className="caixa-cdi">
-                  <input type="checkbox" name="BancoCdi" id="" />
+                  <input type="radio" name="BancoCdi" id="" />
                   <p>Bradesco</p>
                 </div>
 
