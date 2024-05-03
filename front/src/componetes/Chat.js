@@ -2,14 +2,29 @@
 import { IoIosSend } from "react-icons/io";
 import './chat.css';
 import axios from 'axios';
+import { useState } from "react";
 
 const Corpo = () =>{
-  function enviar(){
-    const valor = document.getElementById('pergunta').value
-    axios.post('http://localhost:4000/pergunte-ao-chatgpt', {prompt: valor})
+    const  [ pergunta, setPergunta] = useState('')
+    const [ resposta, setResposta] = useState('')
+
+    const handlePerguntaChange = (e) => {
+        setPergunta(e.target.value)
+    }
+ 
+  const enviar = () => {
+    axios.post('http://localhost:4000/pergunte-ao-chatgpt', {prompt: pergunta})
     .then(response => {
         console.log(response);
-        document.getElementById("caixa").value = response.data.completion;
+        setResposta(response.data.completion);
+        
+        axios.post ('http://localhost:5000/dados', {pergunta: pergunta, resposta: response.data.completion})
+        .then(response => {
+            console.log('dados enviados com sucesso: ', response);
+        })
+        .catch(error => {
+            console.error('Error ao enviar dados para /dados: ', error);
+        })
     }).catch(erro => {
         console.log(erro);
     })
@@ -22,12 +37,22 @@ const Corpo = () =>{
                 
                         <div className="pergunta">
                             <input 
+                            value={pergunta}
+                            onChange={handlePerguntaChange}
                                type="text" 
                                 id="pergunta" 
                                 placeholder="Pergunte ao gestor..."
                                  required  />
                             <button onClick={enviar}><IoIosSend /></button>
                         </div>
+                        <div className="resposta">
+                            <textarea
+                                value={resposta}
+                                placeholder="Resposta do gestor..."
+                                readOnly
+                                style={{ whiteSpace: 'pre-wrap' }}
+                            />
+                         </div>
                     </div>
                 </div>
             </section>

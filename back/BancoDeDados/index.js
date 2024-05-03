@@ -32,7 +32,7 @@ app.post('/dados', (req, res)=>{
         return;
      }
      console.log('Dados Inseridos com sucesso!');
-     res.status(500).send('Dados inseridos com sucesso')
+     res.status(200).send('Dados inseridos com sucesso')
     })
 })
 
