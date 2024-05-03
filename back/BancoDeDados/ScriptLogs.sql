@@ -1,0 +1,9 @@
+CREATE DATABASE IF NOT EXISTS logs;
+
+USE logs;
+
+CREATE TABLE IF NOT EXISTS log_table (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    pergunta TEXT,
+    resposta TEXT
+);
