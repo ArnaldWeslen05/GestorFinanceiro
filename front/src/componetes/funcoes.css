@@ -1,7 +1,7 @@
 .caixa-footer{
     position: absolute;
     display: block;
-    margin: 50px;
+    margin: 90px;
 }
 .box-footer{
     text-align: center;
@@ -28,6 +28,7 @@
         padding: 30px;
         cursor: pointer;
         align-items: center;
+        margin: 0;
     }
     .box-footer{
         width: 180px;

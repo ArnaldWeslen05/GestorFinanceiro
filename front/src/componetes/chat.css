@@ -1,41 +1,47 @@
-.corpo{
+
+.resposta {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+.resposta textarea {
+    width: 850px;
+    height: 500px;
+    box-shadow: 0px 0px 8px;
+    padding: 20px;
+    margin-left: 250px;
+    margin-top: 100px;
+    border-radius: 10px;
+    border: none;
+    white-space: pre-wrap; 
+    font-size: 18px;
+    resize: vertical; 
+    overflow-y: auto; 
+}
+.pergunta {
     display: flex;
     justify-content: center;
     align-content: center;
-    margin-top: 20px;
+    text-align: center;vertical-align: top;
+    word-wrap: break-word; 
 }
-.caixa{
-   background-color: #E8F5F2;
-   width: 900px;
-   height: 500px;
-   box-shadow: 0px 0px 8px;
-   display: flex;
-   padding: 20px;
-   margin: 80px ;
-   border-radius: 10px;
-}
-.pergunta{
-    display: flex;
-    margin-top: 0;
-    align-self: flex-end;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-}
-.pergunta input{
+.pergunta input {
     width: 900px;
     height: 60px;
-    background-color: #AD6DFF ;
-    border-radius: 10px;   
+    background-color: #ad6dff;
+    border-radius: 10px;
     border: none;
+    margin-left: 220px;
     font-size: 18px;
+
+    
 }
-.pergunta input::placeholder{
+.pergunta input::placeholder {
     margin: 15px;
     font-size: 18px;
-    color: #C8C2C2 ;
+    color: #c8c2c2;
 }
-.pergunta button{
+.pergunta button {
     display: flex;
     align-items: center;
     margin-left: -70px;
@@ -43,63 +49,28 @@
     background: transparent;
     border: none;
 }
-.pergunta button svg{
+.pergunta button svg {
     cursor: pointer;
-     height: 40px;
-     width: 40px;
-}
-@media screen and (max-width:1450px) {
-    .caixa{
-        width: 800px;
-        margin: 30px ;
-        margin-left: 150px;
-    }
-    .pergunta input{
-        width: 800px;
-    }
-}
-@media screen and (max-width:1250px){
-    .caixa{
-        margin-left: 150px;
-        margin-top: 200px;
-    }
+    height: 40px;
+    width: 40px;
 }
 
-@media screen and (max-width :850px ) {
-    .caixa{
-        width: 600px;
-        height: 600px;
-        margin-top: 60px;
+  @media screen and (max-width: 1250px) {
+    .resposta textarea{
+         margin-top: 200px; 
     }
-    .pergunta input{
-        width: 600px;
-    }
-}
-@media screen and (max-width :750px ) {
-    .caixa{
-        width: 500px;
-        height: 500px;
-    }
-    .pergunta input{
-        width: 500px;
-    }
-}
-@media screen and (max-width :650px ) {
-    .caixa{
-        width: 400px;
-        height: 500px;
-    }
-    .pergunta input{
-        width: 400px;
-    }
-}
-@media screen and (max-width: 450px){
-    .caixa{
-        width: 280px;
-        height: 500px;
-        margin: 0;
-    }
-    .pergunta input{
-        width: 280px;
-    }   
+} 
+
+@media screen and (max-width: 850px) {
+  
+     .resposta textarea{
+        
+        margin-left: 20px;
+        margin-right: 20px ;
+        margin-top: 20px;
+     }
+     .pergunta input{
+        margin-left: 20px;
+        margin-right: 20px ;
+     }
 }
