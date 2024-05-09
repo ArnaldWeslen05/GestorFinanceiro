@@ -1,0 +1,39 @@
+.container{
+    display: block;
+    margin-top: -40px;
+    justify-content: center;
+    align-content: center;
+    position:absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.caixa-informacoes{
+    z-index: 999; 
+    justify-items: center;
+    align-items: center;
+    background-color: rgb(24, 22, 22);
+    border-radius: 20px;
+    width: 800px;
+    height: 600px;
+    padding: 10px;
+}
+.box-informacoes{
+    height: 60px;
+    background-color: rgb(16, 15, 15);
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: -2px 1px 4px 1px;
+    margin: 40px;
+    font-size: 18px;
+    color: blueviolet;
+}
+.box-informacoes:hover{
+    transition: all 1s;
+    background-color: white;
+}
+.box-informacoes h3{
+    margin: 10px ;
+}
+.box-informacoes p{
+    margin: 10px ;
+}

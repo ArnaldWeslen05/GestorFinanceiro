@@ -1,25 +1,35 @@
 import React, { useState } from 'react';
-import { FaChartLine, FaNewspaper } from "react-icons/fa6";
 import { FaBitcoin } from "react-icons/fa";
+import { FaChartLine, FaNewspaper } from "react-icons/fa6";
 import { GoGoal } from "react-icons/go";
 import Cdi from "./Cdi";
-import './funcoes.css';
 import Criptomoeda from './CriptoMoeda';
-
+import Informações from './Informacoes';
+import './funcoes.css';
 
 const Funcoes = () => {
   const [mostrarCDI, setMostrarCDI] = useState(false);
   const[mostrarCripto, setCripto] = useState(false);
+  const [ mostrarInformaçoes, setInformacoes] = useState(false)
 
   // Função para abrir o componente CDI
   function abrirCDI() {
     setMostrarCDI(!mostrarCDI);
     setCripto(false)
+    setInformacoes(false)
   }
    // Função para abrir o componente CriptoMoeda
    function abrirCripto(){
     setCripto(!mostrarCripto)
     setMostrarCDI(false)
+    setInformacoes(false)
+   }
+   //funçaõ para abrir o componente Noticias
+   function abrirInformaçoes(){
+    setInformacoes(!mostrarInformaçoes)
+    setCripto(false)
+    setMostrarCDI(false)
+
    }
  
 
@@ -38,22 +48,23 @@ const Funcoes = () => {
           <p><FaBitcoin/></p>
         </div>
 
-        {/* Box para Notícias */}
-        <div className="box-footer">
+        {/* Box para definir sua meta*/}
+        <div className="box-footer" >
           <p>Defina Sua Meta</p>
           <p><GoGoal/></p>
           
         </div>
         {/* Box Para defeinir sua Meta */}
-        <div className="box-footer">
-          <p>Notícias</p>
+        <div className="box-footer" onClick={abrirInformaçoes}>
+          <p>Informações Grupo</p>
           <p><FaNewspaper/></p>
         </div>
       </div>
       {/* Renderiza o componente Investimentos se mostrarInvestimentos for true */}
       {mostrarCDI && <Cdi onClose={abrirCDI} />}
       {mostrarCripto && <Criptomoeda onCloseMoeda={abrirCripto} />}
-    </div>
+      {mostrarInformaçoes && <Informações onCloseInformacoes={abrirInformaçoes}/>}
+      </div>
   );
 }
 
