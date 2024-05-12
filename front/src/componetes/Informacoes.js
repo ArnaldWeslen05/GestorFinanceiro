@@ -4,7 +4,7 @@ import { IoCloseCircle } from "react-icons/io5";
 const Notícias = ({ onCloseInformacoes }) => {
      return (
           <div>
-               <div className="container">
+               <div className="container-informacoes">
                     <button className="close" onClick={onCloseInformacoes}>
                          <IoCloseCircle />{" "}
                     </button>

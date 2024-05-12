@@ -44,6 +44,7 @@ const Corpo = () => {
                     </div>
                     <div className="pergunta">
                         <input
+                            
                             value={pergunta}
                             onChange={handlePerguntaChange}
                             type="text"
