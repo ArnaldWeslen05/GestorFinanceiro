@@ -47,9 +47,9 @@ const Cadastro = () => {
             <form className="form" onSubmit={handleSubmit}>
                 <h2>Cadastro</h2>
                 {error && <p className='error'>{error}</p>}
-                <input type="text" placeholder="Nome" value={nome} onChange={handleNomeChange} required />
-                <input type="email" placeholder="Email" value={email} onChange={handleEmailChange} required />
-                <input type="password" placeholder="Senha" value={senha} onChange={handleSenhaChange} required />
+                <input  type="text" placeholder="Nome" value={nome} onChange={handleNomeChange} required />
+                <input  type="email" placeholder="Email" value={email} onChange={handleEmailChange} required />
+                <input  type="password" placeholder="Senha" value={senha} onChange={handleSenhaChange} required />
                 <button type="submit">Cadastrar</button>
                 <p onClick={toogleLogin}>Login</p>
             </form>

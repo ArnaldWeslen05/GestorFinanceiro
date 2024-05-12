@@ -13,11 +13,8 @@
     background-color: #f9f9f9;
 }
 
-.input {
-    margin-bottom: 10px;
-}
 
-button {
+form button {
     width: 100%;
     padding: 10px;
     background-color: #28a745;
@@ -27,6 +24,6 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+form button:hover {
     background-color: #218838;
 }

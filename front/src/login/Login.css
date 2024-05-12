@@ -18,12 +18,12 @@
     padding: 30px;
   }
   
-  input{
+   form input {
     padding: 5px;
     margin-bottom: 20px;
     width: 100%;
   }
-  button {
+  form button {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
@@ -34,7 +34,7 @@
     cursor: pointer;
   }
   
-  button:hover {
+  form button:hover {
     background-color: #0056b3;
   }
   p{

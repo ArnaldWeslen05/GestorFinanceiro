@@ -1,14 +1,20 @@
-import React from "react"
- import Login from "./Login.js"
-// import Cadastro from "./Cadastro.js"
-
+import React, { useState } from "react";
+import Login from "./Login.js";
+import App from '../componetes/App.js';
 
 const Main = () => {
-    return(
-        <div>
-             <Login/> 
-        </div>
-    )
+  const [logado, setLogado] = useState(false);
+
+  const handleLogin = () => {
+    setLogado(true);
+  }
+
+  return (
+    <div>
+      {!logado && <Login onLogin={handleLogin} />}
+      {logado && <App />}
+    </div>
+  );
 }
 
-export default Main
+export default Main;
