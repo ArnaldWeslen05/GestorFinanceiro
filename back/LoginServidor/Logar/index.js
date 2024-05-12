@@ -1,26 +1,34 @@
 const express = require('express');
 const app = express();
 const mysql = require('mysql');
-const cors = require('cors')
+const cors = require('cors');
 
-app.use(express.json())
-app.use(cors())
+app.use(express.json());
+app.use(cors());
 
-app.get('/buscar', (req, res) => {
+app.post('/buscar', (req, res) => {
+    const { email, senha } = req.body;
+
     const connection = mysql.createConnection({
         host: 'localhost',
         user: 'root',
         password: '1234',
-    })
-
-    connection.query("SELCT * FROM usuario", (err, results, fields) => {
+        database: 'login'
+    });
+    connection.query("SELECT * FROM usuarios WHERE email = ? AND senha = ?", [email, senha], (err, results, fields) => {
         if (err) {
-            console.error('erro ao buscar usuario', err);
-            res.status(500).json({ error: 'erro ao buscar usuario' })
+            console.error('Erro ao buscar usuário:', err);
+            res.status(500).json({ error: 'Erro ao buscar usuário.' });
             return;
         }
-        res.json(results)
-    })
-})
 
-app.listen(5002, console.log('rodando uma belezinha na porta 5002'));
+        if (results.length > 0) {
+            res.json({ authenticated: true });
+        } else {
+            res.json({ authenticated: false });
+        }
+    });
+});
+app.listen(5002, () => {
+    console.log('Servidor rodando na porta 5002.');
+});
