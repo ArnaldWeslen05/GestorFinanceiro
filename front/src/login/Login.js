@@ -10,7 +10,7 @@ const Login = ({ onLogin }) => {
 
    const handleLogin = async () => {
       try {
-         const response = await axios.post('http://localhost:5002/buscar', { email, senha });
+         const response = await axios.post('http://localhost:5002/login', { email, senha });
          if (response.data.authenticated) {
             alert('Logado com sucesso!');
             onLogin();

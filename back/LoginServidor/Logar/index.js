@@ -6,7 +6,7 @@ const cors = require('cors');
 app.use(express.json());
 app.use(cors());
 
-app.post('/buscar', (req, res) => {
+app.post('/login', (req, res) => {
     const { email, senha } = req.body;
 
     const connection = mysql.createConnection({
