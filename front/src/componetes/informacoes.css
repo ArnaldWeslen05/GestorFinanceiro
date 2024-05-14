@@ -1,14 +1,15 @@
-.container-informacoes{
+.container-informacoes {
     display: block;
     margin-top: -40px;
     justify-content: center;
     align-content: center;
-    position:absolute;
+    position: absolute;
     left: 50%;
     transform: translateX(-50%);
 }
-.caixa-informacoes{
-    z-index: 999; 
+
+.caixa-informacoes {
+    z-index: 999;
     justify-items: center;
     align-items: center;
     background-color: rgb(24, 22, 22);
@@ -17,7 +18,8 @@
     height: 600px;
     padding: 10px;
 }
-.box-informacoes{
+
+.box-informacoes {
     height: 60px;
     background-color: rgb(16, 15, 15);
     margin-bottom: 30px;
@@ -27,13 +29,29 @@
     font-size: 18px;
     color: blueviolet;
 }
-.box-informacoes:hover{
+
+.box-informacoes:hover {
     transition: all 1s;
     background-color: white;
 }
-.box-informacoes h3{
-    margin: 10px ;
+
+.box-informacoes h3 {
+    margin: 10px;
 }
-.box-informacoes p{
-    margin: 10px ;
+
+.box-informacoes p {
+    margin: 10px;
+    color: blueviolet;
+}
+
+@media screen and (max-width: 431px) {
+    .caixa-informacoes {
+        width: 300px;
+    }
+    .box-informacoes h3{
+        font-size: 16px;
+    }
+    .box-informacoes p{
+        font-size: 13px;
+    }
 }
