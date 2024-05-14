@@ -1,6 +1,5 @@
 
 import React, { useState } from 'react';
-import './Cadastro.css';
 import axios from 'axios';
 import Login from './Login';
 
