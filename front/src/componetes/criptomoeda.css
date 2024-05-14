@@ -108,3 +108,8 @@
         padding: 10px;   
     }
 }
+@media screen and (max-width:431px){
+    .box-moeda{
+        width: 300px;
+    }
+}
