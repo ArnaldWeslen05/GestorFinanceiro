@@ -108,6 +108,27 @@
         padding: 10px;   
     }
     .resultado-cdi input{
-        width: 150px;
+        width: 100px;
+    }
+}
+@media screen and (max-width: 431px){
+    .caixa-investimentos{
+        width: 300px;
+    }
+    .resultado-cdi input{
+        width: 80px;
+        margin-left: 10px;
+       margin-right: 10px;
+    }
+    .calcular{
+        position: absolute;
+       margin-top: 50px;
+       margin-left: 10px;
+    }
+    .res{
+        margin-top: 20px;
+    }
+    .tt{
+        font-size: 15px;
     }
 }
