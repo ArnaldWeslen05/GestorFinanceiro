@@ -35,7 +35,7 @@ const Login = ({ onLogin }) => {
                <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
                <input type="password" placeholder="Senha" value={senha} onChange={(e) => setSenha(e.target.value)} />
                <button type="button" onClick={handleLogin}>Entrar</button>
-               <p onClick={toggleCadastrar}>Cadastrar</p>
+               <p onClick={toggleCadastrar}>não tem cadastro?<span> clique aqui</span></p>
             </form>
          )}
          {cadastrar && <Cadastro />}

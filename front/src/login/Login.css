@@ -11,7 +11,8 @@
     padding: 30px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: #f9f9f9;
+    background-color: rgb(16, 15, 15);
+    color: white;
   }
   h2{
     text-align: center;
@@ -22,12 +23,17 @@
     padding: 5px;
     margin-bottom: 20px;
     width: 100%;
+    background-color: rgb(16, 15, 15);
+    border: none;
+    box-shadow: -2px 1px 4px 1px;
+    color: blueviolet;
+    border-radius: 5px;
   }
   form button {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
-    background-color: #007bff;
+    background-color: blueviolet;
     color: white;
     border: none;
     border-radius: 5px;
@@ -35,7 +41,13 @@
   }
   
   form button:hover {
-    background-color: #0056b3;
+    background-color: rgb(255, 255, 255);
+    box-shadow: -2px 1px 4px 1px blueviolet ;
+    color: blueviolet;
+    transition: 1.1s all;
+  }
+  p span{
+    color: rgb(109, 163, 245);
   }
   p{
     cursor: pointer;

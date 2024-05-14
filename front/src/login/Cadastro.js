@@ -52,7 +52,7 @@ const Cadastro = () => {
                 <input  type="email" placeholder="Email" value={email} onChange={handleEmailChange} required />
                 <input  type="password" placeholder="Senha" value={senha} onChange={handleSenhaChange} required />
                 <button type="submit">Cadastrar</button>
-                <p onClick={toogleLogin}>Login</p>
+                <p onClick={toogleLogin}>Já tem Cadastro? <span>clique aqui</span></p>
             </form>
             )}
             {mostarLogin && <Login/>}
