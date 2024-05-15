@@ -8,7 +8,6 @@ const Cadastro = () => {
     const [email, setEmail] = useState('');
     const [nome, setNome] = useState('');
     const [senha, setSenha] = useState('');
-    const [error, setError] = useState(''); 
 
     const handleNomeChange = (event) => {
         setNome(event.target.value);
@@ -33,12 +32,13 @@ const Cadastro = () => {
             // window.location.reload()
         } catch (error) {
             console.error('Erro ao cadastrar usuário:',error.response.data.error);
-            setError(error.response.data.error);
+            alert(error.response.data.error);
         }
     };
     
     const toogleLogin = () => {
         setLogin(!mostarLogin)
+        window.location.reload()
     }
     
     return (
@@ -46,7 +46,6 @@ const Cadastro = () => {
             {!mostarLogin && (
             <form className="form" onSubmit={handleSubmit}>
                 <h2>Cadastro</h2>
-                {error && <p className='error'>{error}</p>}
                 <input  type="text" placeholder="Nome" value={nome} onChange={handleNomeChange} required />
                 <input  type="email" placeholder="Email" value={email} onChange={handleEmailChange} required />
                 <input  type="password" placeholder="Senha" value={senha} onChange={handleSenhaChange} required />
