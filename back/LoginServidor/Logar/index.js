@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const mysql = require('mysql');
+const mysql = require('mysql2');
 const cors = require('cors');
 
 app.use(express.json());
@@ -20,12 +20,14 @@ app.post('/login', (req, res) => {
             console.error('Erro ao buscar usuário:', err);
             res.status(500).json({ error: 'Erro ao buscar usuário.' });
             return;
-        }
-
+           
+        } 
         if (results.length > 0) {
             res.json({ authenticated: true });
+            console.log('Login com sucesso')
         } else {
             res.json({ authenticated: false });
+            console.log('usuario não encontrado');
         }
     });
 });
