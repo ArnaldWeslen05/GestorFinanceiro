@@ -20,7 +20,9 @@
     padding: 30px;
     font-style: bold italic;
   }
-  
+  .login{
+    display: flex;
+  }
    form input {
     padding: 15px;
     margin-bottom: 20px;

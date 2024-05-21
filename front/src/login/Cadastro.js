@@ -46,10 +46,10 @@ const Cadastro = () => {
             {!mostarLogin && (
             <form className="form" onSubmit={handleSubmit}>
                 <h2>Cadastro</h2>
-                <input  type="text" placeholder="Nome" value={nome} onChange={handleNomeChange} required />
-                <input  type="email" placeholder="Email" value={email} onChange={handleEmailChange} required />
-                <input  type="password" placeholder="Senha" value={senha} onChange={handleSenhaChange} required />
-                <button type="submit">Cadastrar</button>
+                <div className="login"><input type="text" placeholder="Nome" value={nome} onChange={handleNomeChange} required /></div>
+                <div className="login"><input type="email" placeholder="Email" value={email} onChange={handleEmailChange} required /></div>
+                <div className="login"><input type="password" placeholder="Senha" value={senha} onChange={handleSenhaChange} required /></div>
+                <div className="login"><button type="submit">Cadastrar</button></div>
                 <p onClick={toogleLogin}>Já tem Cadastro? <span>clique aqui</span></p>
             </form>
             )}

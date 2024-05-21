@@ -32,10 +32,10 @@ const Login = ({ onLogin }) => {
          {!cadastrar && (
             <form className="form">
                <h2>Login</h2>
-               <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required/>
-               <input type="password" placeholder="Senha" value={senha} onChange={(e) => setSenha(e.target.value)} required/>
-               <button type="button" onClick={handleLogin}>Entrar</button>
-               <p onClick={toggleCadastrar}>não tem cadastro?<span> clique aqui</span></p>
+               <div className='login'><input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required/></div>
+               <div className='login'> <input type="password" placeholder="Senha" value={senha} onChange={(e) => setSenha(e.target.value)} required/></div>
+               <div className='login'> <button type="button" onClick={handleLogin}>Entrar</button> </div>
+               <p onClick={toggleCadastrar}>Não tem cadastro?<span> clique aqui</span></p>
             </form>
          )}
          {cadastrar && <Cadastro />}
