@@ -3,11 +3,13 @@ import { IoCloseCircle } from "react-icons/io5";
 import Cdi from "./Cdi";
 import Criptomoeda from "./CriptoMoeda";
 import Notícias from "./Informacoes";
+import Financias from "./Financias";
 
 const Cabecario = () => {
-  const [mostrarCDI, setMostrarCDI] = useState(false);
+  const [mostrarCDI, setCDI] = useState(false);
   const [mostrarCripto, setCripto] = useState(false);
   const [ mostrarInformacoes, setInformacoes] = useState(false)
+  const [mostrarFinancias, setFinancias] = useState(false)
   //abrir o Menu
 
   function abrirMenu() {
@@ -30,19 +32,28 @@ const Cabecario = () => {
   }
   //Abbre O Componete Investimentos
   function AbrirInvestimentos() {
-    setMostrarCDI(!mostrarCDI);
+    setCDI(!mostrarCDI);
     setCripto(false);
     setInformacoes(false)
+    setFinancias(false)
   }
   function abrirCripto() {
     setCripto(!mostrarCripto);
-    setMostrarCDI(false);
+    setCDI(false);
     setInformacoes(false)
+    setFinancias(false)
   }
   function abrirInformacoes(){
     setInformacoes(!mostrarInformacoes)
-    setMostrarCDI(false)
+    setCDI(false)
     setCripto(false)
+    setFinancias(false)
+  }
+  function abrirFinancias(){
+    setFinancias(!mostrarFinancias)
+    setCDI(false)
+    setCripto(false)
+    setInformacoes(false)
   }
 
   return (
@@ -68,17 +79,18 @@ const Cabecario = () => {
 
       <div id="menu" className="menu">
         <button className="close-menu" onClick={fecharMenu}>
-          {" "} <IoCloseCircle />{" "}
+          {" "}<IoCloseCircle />{" "}
         </button>
         <p onClick={AbrirInvestimentos}>Rendimento CDI</p>
         <p onClick={abrirCripto}>Criptomoeda</p>
-        <p>Defina Sua Meta</p>
+        <p onClick={abrirFinancias}>Financias</p>
         <p onClick={abrirInformacoes}>Informações</p>
       </div>
 
-      {/* Controla O componente Investimentos , e compara se deve ser mostardo ou não */}
+      {/* Controla os componentes , e compara se deve ser mostardo ou não */}
       {mostrarCDI && <Cdi onClose={AbrirInvestimentos} />}
       {mostrarCripto && <Criptomoeda onCloseMoeda={abrirCripto} />}
+      {mostrarFinancias && <Financias onCloseFinancias={abrirFinancias}/>}
       {mostrarInformacoes && <Notícias onCloseInformacoes={abrirInformacoes}/> }
     </div>
   );
