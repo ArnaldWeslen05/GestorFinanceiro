@@ -23,8 +23,7 @@ connection.connect(err => {
     }
 });
 
-//LOGIN
-
+// LOGIN
 app.post('/login', (req, res) => {
     const { email, senha } = req.body;
 
@@ -45,18 +44,10 @@ app.post('/login', (req, res) => {
     });
 });
 
-//CADASTRO 
-
+// CADASTRO
 app.post("/cadastro", (req, res) => {
     const { nome, email, senha } = req.body;
-    const connection = mysql.createConnection({
-        host: "localhost",
-        user: "root",
-        password: "1234",
-        database: "login",
-    });
-
-    // apra verifica se o email já está cadastrado
+    // Verifica se o email já está cadastrado
     connection.query(
         "SELECT * FROM usuarios WHERE email = ?",
         [email],
@@ -66,13 +57,12 @@ app.post("/cadastro", (req, res) => {
                 res.status(500).json({ error: "Erro ao cadastrar usuário" });
                 return;
             }
-            // Se o email já estiver cadastrado, retorna um erro
+
             if (result.length > 0) {
                 console.log("Email já cadastrado");
                 res.status(400).json({ error: "Este email já está cadastrado, tente outro!" });
                 return;
             }
-            // Se o email não estiver cadastrado, realiza a inserção no banco de dados
             const query =
                 "INSERT INTO usuarios (nome, email, senha) VALUES (?, ?, ?)";
             connection.query(query, [nome, email, senha], (err, result) => {
@@ -88,26 +78,38 @@ app.post("/cadastro", (req, res) => {
     );
 });
 
-//ATUALIZAR FINANCIAS
-
-
+// ATUALIZAR FINANÇAS
 app.post('/financias', (req, res) => {
     const { entrada, saida } = req.body;
     if (!authenticatedUser) {
         return res.status(401).json({ error: 'Usuário não autenticado.' });
     }
-    const saldo = entrada - saida;
+    const novoSaldo = entrada - saida;
+    console.log('Calculando novo saldo:', novoSaldo, 'para o usuario:', authenticatedUser.email);
 
-    console.log('Atualizando saldo:', saldo, 'para o usuário:', authenticatedUser.email);
-
-    connection.query("UPDATE usuarios SET saldo = ? WHERE email = ?", [saldo, authenticatedUser.email], (err, results) => {
+    connection.query("SELECT saldo FROM usuarios WHERE email = ?", [authenticatedUser.email], (err, results) => {
         if (err) {
-            console.error('Erro ao atualizar o saldo:', err);
-            res.status(500).json({ error: 'Erro ao atualizar o saldo.' });
-            console.log(err)
+            console.error('Erro ao buscar o saldo atual:', err);
+            res.status(500).json({ error: 'Erro ao buscar o saldo atual.' });
             return;
         }
-        res.json({ success: true });
+        if (results.length === 0) {
+            res.status(500).json({ error: 'Usuário não encontrado.' });
+            return;
+        }
+
+        const saldoAtual = results[0].saldo;
+        const saldoAtualizado = saldoAtual + novoSaldo;
+        console.log('Saldo atual:', saldoAtual, 'Novo Saldo acumulado:', saldoAtualizado);
+
+        connection.query("UPDATE usuarios SET saldo = ? WHERE email = ?", [saldoAtualizado, authenticatedUser.email], (err, results) => {
+            if (err) {
+                console.error('Erro ao atualizar o saldo:', err);
+                res.status(500).json({ error: 'Erro ao atualizar o saldo.' });
+                return;
+            }
+            res.json({ success: true });
+        });
     });
 });
 
