@@ -13,13 +13,15 @@
     justify-items: center;
     align-items: center;
     background-color: rgb(24, 22, 22);
+    transition: all 1s;
     border-radius: 20px;
     width: 800px;
     height: 600px;
     padding: 10px;
 }
 .caixa-moeda input{
-   border-radius: 50%;
+    transition: all 1s;
+    border-radius: 50%;
    margin: 20px;
 }
 .caixa-moeda label{

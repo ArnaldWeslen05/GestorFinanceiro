@@ -15,6 +15,7 @@
     background-color: rgb(24, 22, 22);
     border-radius: 20px;
     width: 700px;
+    transition: all 1s;
     height: 600px;
     padding: 10px;
 }
@@ -26,6 +27,7 @@
     border-radius: 10px;
     box-shadow: -2px 1px 4px 1px;
     margin: 40px;
+    transition: all 1s;
     font-size: 18px;
     color: blueviolet;
 }
@@ -42,6 +44,11 @@
 .box-informacoes p {
     margin: 10px;
     color: blueviolet;
+}
+@media screen and (max-width: 820px){
+    .caixa-informacoes {
+        width: 500px;
+    }
 }
 
 @media screen and (max-width: 431px) {
