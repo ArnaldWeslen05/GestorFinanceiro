@@ -22,14 +22,13 @@ const Cadastro = () => {
     };
 
     const handleSubmit = async (event) => {
-        // event.preventDefault();
         try {
-            await axios.post('http://localhost:5001/cadastro', { nome, email, senha });
+            await axios.post('http://localhost:5002/cadastro', { nome, email, senha });
             alert('Cadastro realizado com sucesso!');
             setNome('');
             setEmail('');
             setSenha('');
-            // window.location.reload()
+
         } catch (error) {
             console.error('Erro ao cadastrar usuário:',error.response.data.error);
             alert(error.response.data.error);
