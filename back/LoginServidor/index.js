@@ -36,7 +36,7 @@ app.post('/login', (req, res) => {
         if (results.length > 0) {
             authenticatedUser = results[0]; // Armazenar informações do usuário autenticado
             res.json({ authenticated: true });
-            console.log('Login com sucesso');
+            console.log('Login com sucesso em:', authenticatedUser.email);
         } else {
             res.json({ authenticated: false });
             console.log('Usuário não encontrado');
