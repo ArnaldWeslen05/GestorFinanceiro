@@ -35,6 +35,7 @@ app.post('/login', (req, res) => {
         }
         if (results.length > 0) {
             authenticatedUser = results[0]; // Armazenar informações do usuário autenticado
+            console.log(authenticatedUser);
             res.json({ authenticated: true });
             console.log('Login com sucesso em:', authenticatedUser.email);
         } else {
@@ -47,7 +48,6 @@ app.post('/login', (req, res) => {
 // CADASTRO
 app.post("/cadastro", (req, res) => {
     const { nome, email, senha } = req.body;
-    // Verifica se o email já está cadastrado
     connection.query(
         "SELECT * FROM usuarios WHERE email = ?",
         [email],
@@ -85,7 +85,7 @@ app.post('/financias', (req, res) => {
         return res.status(401).json({ error: 'Usuário não autenticado.' });
     }
     const novoSaldo = entrada - saida;
-    console.log('Calculando novo saldo:', novoSaldo, 'para o usuario:', authenticatedUser.email);
+    console.log('Valor da transação: ', novoSaldo, 'feito por:', authenticatedUser.email);
 
     connection.query("SELECT saldo FROM usuarios WHERE email = ?", [authenticatedUser.email], (err, results) => {
         if (err) {
@@ -108,10 +108,33 @@ app.post('/financias', (req, res) => {
                 res.status(500).json({ error: 'Erro ao atualizar o saldo.' });
                 return;
             }
+            authenticatedUser.saldo = saldoAtualizado
             res.json({ success: true });
         });
     });
 });
+
+//ROTA PARA OBTER O SALDO 
+
+app.get('/saldo', (req, res) => {
+    if (!authenticatedUser) {
+        return res.status(401).json({ error: 'Usuário não autenticado.' });
+    }
+    connection.query("SELECT saldo FROM usuarios WHERE email = ?", [authenticatedUser.email], (err, results) => {
+        if (err) {
+            console.error('Erro ao buscar o saldo:', err);
+            res.status(500).json({ error: 'Erro ao buscar o saldo.' });
+            return;
+        }
+        if (results.length === 0) {
+            res.status(500).json({ error: 'Usuário não encontrado.' });
+            return;
+        }
+        const saldo = results[0].saldo;
+        res.json({ saldo });
+    });
+});
+
 
 app.listen(5002, () => {
     console.log('Servidor rodando na porta 5002.');
