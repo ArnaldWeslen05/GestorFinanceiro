@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { IoCloseCircle } from "react-icons/io5";
 import Cdi from "./Cdi";
 import Criptomoeda from "./CriptoMoeda";
@@ -8,10 +8,10 @@ import Financias from "./Financias";
 const Cabecario = () => {
   const [mostrarCDI, setCDI] = useState(false);
   const [mostrarCripto, setCripto] = useState(false);
-  const [ mostrarInformacoes, setInformacoes] = useState(false)
-  const [mostrarFinancias, setFinancias] = useState(false)
-  //abrir o Menu
+  const [mostrarInformacoes, setInformacoes] = useState(false);
+  const [mostrarFinancias, setFinancias] = useState(false);
 
+  // Abrir o Menu
   function abrirMenu() {
     const menu = document.getElementById("menu");
     const btnMenu = document.getElementById("btn-menu");
@@ -22,6 +22,7 @@ const Cabecario = () => {
       menu.style.display = "none";
     }
   }
+
   function fecharMenu() {
     const menu = document.getElementById("menu");
     const btnMenu = document.getElementById("btn-menu");
@@ -30,30 +31,55 @@ const Cabecario = () => {
       btnMenu.style.display = "flex";
     }
   }
-  //Abbre O Componete Investimentos
+
+  // Controla a visibilidade do menu quando a janela é redimensionada
+  useEffect(() => {
+    const handleResize = () => {
+      const menu = document.getElementById("menu");
+      const btnMenu = document.getElementById("btn-menu");
+      if (window.innerWidth > 850) {
+        menu.style.display = "none";
+        btnMenu.style.display = "none";
+      } else {
+        btnMenu.style.display = "flex";
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize();
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  // Abre o Componente Investimentos
   function AbrirInvestimentos() {
     setCDI(!mostrarCDI);
     setCripto(false);
-    setInformacoes(false)
-    setFinancias(false)
+    setInformacoes(false);
+    setFinancias(false);
   }
+
   function abrirCripto() {
     setCripto(!mostrarCripto);
     setCDI(false);
-    setInformacoes(false)
-    setFinancias(false)
+    setInformacoes(false);
+    setFinancias(false);
   }
-  function abrirInformacoes(){
-    setInformacoes(!mostrarInformacoes)
-    setCDI(false)
-    setCripto(false)
-    setFinancias(false)
+
+  function abrirInformacoes() {
+    setInformacoes(!mostrarInformacoes);
+    setCDI(false);
+    setCripto(false);
+    setFinancias(false);
   }
-  function abrirFinancias(){
-    setFinancias(!mostrarFinancias)
-    setCDI(false)
-    setCripto(false)
-    setInformacoes(false)
+
+  function abrirFinancias() {
+    setFinancias(!mostrarFinancias);
+    setCDI(false);
+    setCripto(false);
+    setInformacoes(false);
   }
 
   return (
@@ -67,11 +93,11 @@ const Cabecario = () => {
           width="50"
           height="50"
           fill="currentColor"
-          class="bi bi-list"
+          className="bi bi-list"
           viewBox="0 0 16 16"
         >
           <path
-            fill-rule="evenodd"
+            fillRule="evenodd"
             d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
           />
         </svg>
@@ -79,7 +105,7 @@ const Cabecario = () => {
 
       <div id="menu" className="menu">
         <button className="close-menu" onClick={fecharMenu}>
-          {" "}<IoCloseCircle />{" "}
+          <IoCloseCircle />
         </button>
         <p onClick={AbrirInvestimentos}>Rendimento CDI</p>
         <p onClick={abrirCripto}>Criptomoeda</p>
@@ -87,12 +113,13 @@ const Cabecario = () => {
         <p onClick={abrirInformacoes}>Informações</p>
       </div>
 
-      {/* Controla os componentes , e compara se deve ser mostardo ou não */}
+      {/* Controla os componentes e compara se deve ser mostrado ou não */}
       {mostrarCDI && <Cdi onClose={AbrirInvestimentos} />}
       {mostrarCripto && <Criptomoeda onCloseMoeda={abrirCripto} />}
-      {mostrarFinancias && <Financias onCloseFinancias={abrirFinancias}/>}
-      {mostrarInformacoes && <Notícias onCloseInformacoes={abrirInformacoes}/> }
+      {mostrarFinancias && <Financias onCloseFinancias={abrirFinancias} />}
+      {mostrarInformacoes && <Notícias onCloseInformacoes={abrirInformacoes} />}
     </div>
   );
 };
+
 export default Cabecario;
