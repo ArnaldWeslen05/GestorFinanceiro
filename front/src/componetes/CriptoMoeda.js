@@ -25,16 +25,16 @@ const Criptomoeda = ({ onCloseMoeda }) => {
             let xrp;
     
             if (moedas[0].checked) {
-                btc = Number(valor) /  329686.49;
+                btc = Number(valor) /  360500.49;
                 res.innerText = `com R$${valor} você terá: ${btc.toFixed(5)} BTC`;
             } else if (moedas[1].checked) {
-                eth = Number(valor) / 16311.04;
+                eth = Number(valor) / 20082.17;
                 res.innerText = `com R$${valor} você terá: ${eth.toFixed(5)} ETH`;
             } else if (moedas[2].checked) {
-                ltc = Number(valor) / 40;
+                ltc = Number(valor) / 441.90;
                 res.innerText = `com R$${valor} você terá: ${ltc.toFixed(5)} LTC`;
             } else if (moedas[3].checked) {
-                xrp = Number(valor) / 50;
+                xrp = Number(valor) / 2.73;
                 res.innerText = `com R$${valor} você terá: ${xrp.toFixed(5)} XRP`;
             }
         }
