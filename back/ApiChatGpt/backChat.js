@@ -12,7 +12,7 @@ app.use(cors());
 app.post("/pergunte-ao-chatgpt", async (req, res) => {
     const { prompt } = req.body;
     const model = "gpt-3.5-turbo";
-    const max_tokens = 50; 
+    const max_tokens = 350; 
 
     const messages = [
         { role: "system", content: "Você é um assistente especializado em finanças. Responda apenas perguntas relacionadas a finanças, investimentos, economia e gestão financeira." },
