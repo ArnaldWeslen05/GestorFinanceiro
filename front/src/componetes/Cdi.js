@@ -1,6 +1,6 @@
+import { useState } from "react";
 import { IoCloseCircle } from "react-icons/io5";
 import "./Cdi.css";
-import { useState } from "react";
 
 const Cdi = ({ onClose }) => {
     const [bancoSelecionado, setBancoSelecionado] = useState("");
@@ -16,7 +16,7 @@ const Cdi = ({ onClose }) => {
             return;
         }
         if (!meses) {
-            setErro("Porfavor, inserir um Valor em Meses");
+            setErro("Por favor, insira um valor em meses.");
             setResultado("");
             return;
         }
@@ -27,29 +27,36 @@ const Cdi = ({ onClose }) => {
             return;
         }
 
-        let taxa;
+        let percentualCDI;
         switch (bancoSelecionado) {
             case "Nubank":
-                taxa = 1.01; // 101%
+                percentualCDI = 1.00; // 100% do CDI
                 break;
             case "PicPay":
-                taxa = 1.02; // 102%
+                percentualCDI = 1.02; // 102% do CDI
                 break;
             case "Inter":
-                taxa = 1.03; // 103%
+                percentualCDI = 0.98; // 98% do CDI
                 break;
             case "Bradesco":
-                taxa = 1.04; // 104%
+                percentualCDI = 1.02; // 102% do CDI
                 break;
             default:
-                taxa = 1; // Caso nenhum banco seja selecionado, a taxa é 100%
+                percentualCDI = 1.00; // Caso nenhum banco seja selecionado, a taxa é 100% do CDI
         }
 
         const valorNumerico = parseFloat(valor);
         const mesesNumerico = parseFloat(meses);
-        const resultadoCalculado = valorNumerico * taxa ** mesesNumerico;
-        setResultado(resultadoCalculado.toFixed(2)); // Limita o resultado a 2 casas decimais
-        setErro(""); // Limpa a mensagem de erro
+        const dias = mesesNumerico * 30; // Convertendo meses para dias
+
+        const cdiAnual = 0.12316; // 12,316% ao ano
+        const cdiDiario = Math.pow(1 + cdiAnual, 1 / 252) - 1; // 252 dias úteis no ano
+        const rendimentoDiario = Math.pow(1 + cdiDiario, percentualCDI) - 1;
+
+        const resultadoCalculado = valorNumerico * Math.pow(1 + rendimentoDiario, dias);
+
+        setResultado(resultadoCalculado.toFixed(2)); 
+        setErro(""); 
     };
 
     return (
@@ -114,8 +121,7 @@ const Cdi = ({ onClose }) => {
                             onChange={(e) => setMeses(e.target.value)}
                         />
                         <button className="calcular" onClick={calcularCDI}>
-                            {" "}
-                            calcular{" "}
+                            calcular
                         </button>
                     </div>
                     {erro && <h1 className="res">{erro}</h1>}
